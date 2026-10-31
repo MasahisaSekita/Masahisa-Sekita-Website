@@ -12,7 +12,7 @@ export default function PhilosophySection() {
       title: "Resilience by Design",
       quote: "Operational telemetry must actively defend the business, not just record it.",
       description:
-        "I build end-to-end data pipelines from BigQuery and ERP databases that actively surface fraud anomalies, track real-time funnels, and trigger automated GTM workflows—saving teams hundreds of hours of manual triage.",
+        "I build end-to-end data pipelines from BigQuery and ERP databases that actively surface fraud anomalies, track real-time funnels, and trigger automated GTM workflows saving teams hundreds of hours of manual triage.",
     },
     {
       number: "03",

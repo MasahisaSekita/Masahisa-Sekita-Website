@@ -34,7 +34,7 @@ export default function Hero() {
         <div className="lg:col-span-7 max-w-xl">
           <h1 className="font-serif text-5xl sm:text-6xl md:text-[4.25rem] font-normal leading-[1.08] tracking-tight text-[#1C1917] mb-8">
             Hello, I&apos;m Masahisa.<br />
-            I&apos;m a developer.
+            I&apos;m a fullstack developer.
           </h1>
 
           <div className="font-mono text-sm sm:text-[15px] text-[#44403C] leading-[1.8] space-y-5 max-w-lg">
