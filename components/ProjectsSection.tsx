@@ -62,7 +62,7 @@ export default function ProjectsSection() {
               {/* Header: Number, Category & Year */}
               <div className="flex items-center justify-between text-xs font-mono text-[#78716C] mb-4 pb-3 border-b border-[#E7E2D6]">
                 <div className="flex items-center gap-3">
-                  <span className="text-[#1C1917] font-semibold">{project.index}</span>
+                  <span className="text-[#E52E1E] font-semibold">{project.index}</span>
                   <span>/</span>
                   <span className="uppercase tracking-wider text-[#57534E] font-medium">
                     {project.category}
@@ -73,7 +73,7 @@ export default function ProjectsSection() {
 
               {/* Title & Subtitle */}
               <div className="mb-4">
-                <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#1C1917] tracking-tight">
+                <h3 className="font-serif text-2xl sm:text-3xl font-normal text-[#1C1917] tracking-tight group-hover:text-[#E52E1E] transition">
                   {project.title}
                 </h3>
                 <p className="font-serif italic text-base sm:text-lg text-[#78716C] mt-1">

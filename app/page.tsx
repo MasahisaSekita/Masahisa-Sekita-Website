@@ -7,13 +7,18 @@ import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
+      {/* Full-width Hero with unconstrained radiant aura & vector field */}
       <Hero />
-      <ProjectsSection />
-      <PhilosophySection />
-      <ExperienceSection />
-      <SkillsSection />
-      <ContactSection />
+
+      {/* Structured Content Container */}
+      <div className="max-w-4xl mx-auto px-6 sm:px-8 md:px-10 w-full">
+        <ProjectsSection />
+        <PhilosophySection />
+        <ExperienceSection />
+        <SkillsSection />
+        <ContactSection />
+      </div>
     </div>
   );
 }

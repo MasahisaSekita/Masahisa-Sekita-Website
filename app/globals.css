@@ -7,6 +7,8 @@
   --foreground: #1c1917;
   --muted: #78716c;
   --border-subtle: #e7e2d8;
+  --accent-red: #e52e1e;
+  --accent-amber: #fb8500;
 }
 
 html {
@@ -24,8 +26,8 @@ body {
 }
 
 ::selection {
-  background-color: #292524;
-  color: #fbf9f5;
+  background-color: #e52e1e;
+  color: #ffffff;
 }
 
 /* Custom hairline borders */
@@ -33,11 +35,11 @@ body {
   border-color: #e7e2d6;
 }
 
-/* Editorial typography link underline */
+/* Editorial typography link underline with reference crimson accent */
 .editorial-link {
   position: relative;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .editorial-link::after {
@@ -49,11 +51,12 @@ body {
   height: 1px;
   background-color: currentColor;
   opacity: 0.35;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
 }
 
 .editorial-link:hover::after {
   opacity: 1;
+  background-color: #e52e1e;
 }
 
 /* Custom subtle scrollbar */
@@ -68,5 +71,5 @@ body {
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #aba291;
+  background: #e52e1e;
 }

@@ -4,9 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Masahisa Sekita — Full-Stack Developer & Product Intelligence Engineer",
+  title: "Masahisa Sekita — Full-Stack Developer",
   description:
-    "Personal portfolio of Masahisa Sekita. Computer Science graduate from the University of Toronto building AI-driven automation, high-availability growth systems, and data pipelines for ecommerce and B2B platforms.",
+    "Computer Science graduate from the University of Toronto building AI-driven automation, high-availability growth systems, and secure full-stack applications for ecommerce and B2B platforms.",
   keywords: [
     "Masahisa Sekita",
     "Full-Stack Developer",
@@ -14,7 +14,6 @@ export const metadata: Metadata = {
     "Data Pipelines",
     "Internal Tooling",
     "University of Toronto",
-    "YOBOLabs",
     "TypeScript",
     "Python",
     "Next.js",
@@ -28,16 +27,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://masahisa-sekita.vercel.app",
-    title: "Masahisa Sekita — Full-Stack Developer & Product Intelligence Engineer",
+    title: "Masahisa Sekita — Full-Stack Developer",
     description:
-      "Computer Science graduate from the University of Toronto. Building AI automation, data pipelines, and full-stack growth systems.",
+      "Computer Science graduate from the University of Toronto building AI automation, high-availability growth systems, and data pipelines.",
     siteName: "Masahisa Sekita",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Masahisa Sekita — Full-Stack Developer & Product Intelligence Engineer",
+    title: "Masahisa Sekita — Full-Stack Developer",
     description:
-      "Computer Science graduate from the University of Toronto. Building AI automation, data pipelines, and full-stack growth systems.",
+      "Computer Science graduate from the University of Toronto building AI automation, high-availability growth systems, and data pipelines.",
   },
 };
 
@@ -56,12 +55,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-[#FAF8F5] text-[#1C1917] font-sans antialiased selection:bg-[#292524] selection:text-[#FAF8F5]">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 md:px-12">
-          <Navbar />
-          <main className="pt-24 pb-20 sm:pt-32 sm:pb-28">{children}</main>
-          <Footer />
-        </div>
+      <body className="min-h-screen bg-[#FAF8F5] text-[#1C1917] font-sans antialiased selection:bg-[#E52E1E] selection:text-white overflow-x-hidden">
+        <Navbar />
+        <main className="pt-[68px] sm:pt-[76px]">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -2,21 +2,21 @@ export default function PhilosophySection() {
   const principles = [
     {
       number: "01",
-      title: "Deterministic Systems Over Hype",
+      title: "Clarity in Architecture",
       quote: "AI works best when paired with mathematical rigor and constraint satisfaction.",
       description:
         "Whether building conversational RAG planners or automated QA pipelines, I ground LLM outputs with deterministic algorithms, vector retrieval validation, and strict rollback boundaries to prevent hallucination in production.",
     },
     {
       number: "02",
-      title: "Telemetry as the Source of Truth",
-      quote: "Operational data should drive automated business actions, not just passive reports.",
+      title: "Resilience by Design",
+      quote: "Operational telemetry must actively defend the business, not just record it.",
       description:
-        "I build end-to-end telemetry pipelines from BigQuery and ERP databases that actively surface fraud anomalies, track real-time funnels, and trigger automated GTM workflows—saving teams hundreds of hours of manual triage.",
+        "I build end-to-end data pipelines from BigQuery and ERP databases that actively surface fraud anomalies, track real-time funnels, and trigger automated GTM workflows—saving teams hundreds of hours of manual triage.",
     },
     {
       number: "03",
-      title: "Resilience & Security by Default",
+      title: "Integrity in Data & Security",
       quote: "A system is only as good as its failure modes and access controls.",
       description:
         "From executing zero-downtime blue-green database migrations to auditing AR/AP workflows and remediating privilege escalation vectors, I engineer applications with strict RBAC, rate limiting, and defensive architecture.",
@@ -27,9 +27,14 @@ export default function PhilosophySection() {
     <section id="principles" className="py-16 sm:py-24 border-b border-[#E7E2D6]">
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-12 sm:mb-16">
-        <h2 className="font-serif text-2xl sm:text-3xl text-[#1C1917] tracking-tight">
-          Engineering Principles
-        </h2>
+        <div>
+          <h2 className="font-serif text-2xl sm:text-3xl text-[#1C1917] tracking-tight">
+            Engineering Principles
+          </h2>
+          <p className="font-serif italic text-sm text-[#78716C] mt-1">
+            The ideals that guide my approach to problem solving and systems design.
+          </p>
+        </div>
         <span className="font-mono text-xs uppercase tracking-widest text-[#78716C]">
           [ 02 — Philosophy ]
         </span>
@@ -40,12 +45,12 @@ export default function PhilosophySection() {
         {principles.map((item, idx) => (
           <div
             key={idx}
-            className="space-y-4 pt-6 border-t border-[#E7E2D6] md:border-t md:pt-6"
+            className="space-y-4 pt-6 border-t border-[#E7E2D6] md:border-t md:pt-6 group"
           >
-            <div className="font-mono text-xs text-[#A8A29E]">
+            <div className="font-mono text-xs text-[#E52E1E] font-medium">
               {item.number} / CORE VALUE
             </div>
-            <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#1C1917] leading-snug">
+            <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#1C1917] leading-snug group-hover:text-[#E52E1E] transition">
               {item.title}
             </h3>
             <p className="font-serif italic text-sm text-[#78716C] leading-normal">
