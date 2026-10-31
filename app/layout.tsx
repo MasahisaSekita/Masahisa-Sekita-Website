@@ -1,44 +1,43 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Masahisa Sekita | Product & Business Intelligence Engineer",
+  title: "Masahisa Sekita — Full-Stack Developer & Product Intelligence Engineer",
   description:
-    "Personal portfolio of Masahisa Sekita. Product & Business Intelligence Engineer at YOBOLabs.ai and University of Toronto software engineering alumni. Building data-driven products, growth telemetry, and AI systems.",
+    "Personal portfolio of Masahisa Sekita. Computer Science graduate from the University of Toronto building AI-driven automation, high-availability growth systems, and data pipelines for ecommerce and B2B platforms.",
   keywords: [
     "Masahisa Sekita",
-    "Product Engineer",
-    "Business Intelligence Engineer",
     "Full-Stack Developer",
-    "YOBOLabs",
+    "AI Automation",
+    "Data Pipelines",
+    "Internal Tooling",
     "University of Toronto",
-    "Software Engineer",
-    "React",
-    "Next.js",
+    "YOBOLabs",
+    "TypeScript",
     "Python",
-    "Data Pipelines"
+    "Next.js",
+    "BigQuery",
+    "Supabase",
+    "Apache Superset"
   ],
-  authors: [{ name: "Masahisa Sekita", url: "https://www.linkedin.com/in/masahisa-sekita-57a7a8148/" }],
+  authors: [{ name: "Masahisa Sekita", url: "https://www.linkedin.com/in/masahisa-sekita" }],
   creator: "Masahisa Sekita",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://masahisa-sekita.vercel.app",
-    title: "Masahisa Sekita | Product & Business Intelligence Engineer",
+    title: "Masahisa Sekita — Full-Stack Developer & Product Intelligence Engineer",
     description:
-      "Product & Business Intelligence Engineer at YOBOLabs.ai and U of T alumnus. Bridging data intelligence, growth analytics, and modern AI engineering.",
-    siteName: "Masahisa Sekita Portfolio",
+      "Computer Science graduate from the University of Toronto. Building AI automation, data pipelines, and full-stack growth systems.",
+    siteName: "Masahisa Sekita",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Masahisa Sekita | Product & Business Intelligence Engineer",
+    title: "Masahisa Sekita — Full-Stack Developer & Product Intelligence Engineer",
     description:
-      "Product & Business Intelligence Engineer at YOBOLabs.ai and U of T alumnus. Bridging data intelligence and modern software engineering.",
+      "Computer Science graduate from the University of Toronto. Building AI automation, data pipelines, and full-stack growth systems.",
   },
 };
 
@@ -48,15 +47,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} min-h-screen bg-[#030712] text-slate-100 antialiased selection:bg-indigo-500/30 selection:text-indigo-200`}>
-        <div className="fixed inset-0 bg-grid-pattern pointer-events-none z-0 opacity-70" />
-        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-indigo-600/10 blur-[130px] rounded-full pointer-events-none -z-10" />
-        <div className="fixed bottom-0 right-1/4 w-[500px] h-[300px] bg-purple-600/10 blur-[140px] rounded-full pointer-events-none -z-10" />
-        
-        <Navbar />
-        <main className="relative z-10">{children}</main>
-        <Footer />
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="min-h-screen bg-[#FAF8F5] text-[#1C1917] font-sans antialiased selection:bg-[#292524] selection:text-[#FAF8F5]">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 md:px-12">
+          <Navbar />
+          <main className="pt-24 pb-20 sm:pt-32 sm:pb-28">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

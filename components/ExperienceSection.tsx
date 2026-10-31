@@ -1,99 +1,84 @@
-import { portfolioData } from "@/data/portfolio";
-import { Briefcase, Calendar, MapPin, CheckCircle2 } from "lucide-react";
+import { portfolioData, Experience } from "@/data/portfolio";
+import { ArrowUpRight } from "lucide-react";
 
 export default function ExperienceSection() {
-  const { experiences } = portfolioData;
+  const { experience } = portfolioData;
 
   return (
-    <section id="experience" className="py-20 md:py-28 relative border-t border-slate-800/60">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold tracking-wide uppercase mb-3 border border-indigo-500/20">
-            Professional Experience
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-            Where I&apos;ve Made an Impact
-          </h2>
-          <p className="text-slate-400 text-base max-w-xl mt-3">
-            Translating analytical insights into real-world product engineering and growth architecture.
-          </p>
-        </div>
+    <section id="experience" className="py-16 sm:py-24 border-b border-[#E7E2D6]">
+      {/* Section Header */}
+      <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-12 sm:mb-16">
+        <h2 className="font-serif text-2xl sm:text-3xl text-[#1C1917] tracking-tight">
+          Experience &amp; Contributions
+        </h2>
+        <span className="font-mono text-xs uppercase tracking-widest text-[#78716C]">
+          [ 02 — Career ]
+        </span>
+      </div>
 
-        {/* Timeline items */}
-        <div className="max-w-4xl mx-auto space-y-8">
-          {experiences.map((exp, idx) => (
-            <div
-              key={idx}
-              className="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 relative overflow-hidden"
-            >
-              {/* Top Row: Role, Company & Period */}
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4 pb-4 border-b border-slate-800">
-                <div>
-                  <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-medium mb-2 border border-emerald-500/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                    Current Role
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white">
-                    {exp.role}
+      {/* Experience List */}
+      <div className="space-y-14 sm:space-y-16">
+        {experience.map((exp: Experience, idx: number) => (
+          <article
+            key={idx}
+            className="pt-8 border-t border-[#E7E2D6] first:border-t-0 first:pt-0"
+          >
+            {/* Header: Role, Company & Period */}
+            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4 mb-4">
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#1C1917]">
+                    {exp.company}
                   </h3>
-                  <div className="flex items-center gap-2 text-indigo-400 font-medium text-base mt-0.5">
-                    <Briefcase className="w-4 h-4" />
-                    <span>{exp.company}</span>
-                    <span className="text-slate-600">•</span>
-                    <span className="text-slate-400 text-xs">{exp.type}</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col sm:items-end text-xs sm:text-sm text-slate-400 gap-1">
-                  <div className="flex items-center gap-1.5 text-slate-300 font-medium">
-                    <Calendar className="w-4 h-4 text-slate-400" />
-                    <span>{exp.period}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-slate-400" />
-                    <span>{exp.location}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-                {exp.description}
-              </p>
-
-              {/* Key Achievements */}
-              <div className="mb-6">
-                <h4 className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-3">
-                  Key Responsibilities &amp; Outcomes
-                </h4>
-                <ul className="space-y-2.5">
-                  {exp.achievements.map((ach, aIdx) => (
-                    <li key={aIdx} className="flex items-start gap-3 text-sm text-slate-300 leading-normal">
-                      <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-1 flex-shrink-0" />
-                      <span>{ach}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Technologies */}
-              <div className="pt-4 border-t border-slate-800/80">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-xs text-slate-400 font-medium mr-1">Stack:</span>
-                  {exp.technologies.map((tech, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="text-xs px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 border border-slate-700/60 font-mono"
+                  {exp.link && (
+                    <a
+                      href={exp.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#78716C] hover:text-[#1C1917] transition"
+                      title="View Pull Request"
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
+                <p className="font-serif italic text-base text-[#57534E] mt-0.5">
+                  {exp.role}
+                </p>
+              </div>
+
+              <div className="font-mono text-xs text-[#78716C] sm:text-right mt-1 sm:mt-0">
+                <span className="block text-[#1C1917] font-medium">{exp.period}</span>
+                {exp.type && <span>{exp.type}</span>}
               </div>
             </div>
-          ))}
-        </div>
+
+            {/* Achievements */}
+            <ul className="space-y-2.5 mb-6 max-w-3xl">
+              {exp.achievements.map((ach: string, aIdx: number) => (
+                <li
+                  key={aIdx}
+                  className="text-sm text-[#44403C] leading-relaxed flex items-start gap-3"
+                >
+                  <span className="text-[#A8A29E] select-none text-xs mt-1">—</span>
+                  <span>{ach}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Tech Badges */}
+            <div className="flex flex-wrap gap-1.5">
+              {exp.technologies.map((tech: string, tIdx: number) => (
+                <span
+                  key={tIdx}
+                  className="font-mono text-[11px] px-2 py-0.5 rounded bg-[#F3EFE7] text-[#57534E] border border-[#E7E2D6]/80"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );

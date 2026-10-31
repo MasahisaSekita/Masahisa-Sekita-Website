@@ -1,17 +1,15 @@
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import SkillsSection from "@/components/SkillsSection";
 import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-0">
+    <div className="flex flex-col">
       <Hero />
-      <About />
-      <ExperienceSection />
       <ProjectsSection />
+      <ExperienceSection />
       <SkillsSection />
       <ContactSection />
     </div>

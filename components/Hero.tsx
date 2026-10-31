@@ -1,105 +1,85 @@
-"use client";
-
 import { portfolioData } from "@/data/portfolio";
-import { ArrowRight, Github, Linkedin, Mail, FileText, ChevronDown } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
-  const { personal, stats } = portfolioData;
+  const { personal, education } = portfolioData;
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-slate-800 text-xs text-slate-300 mb-6 backdrop-blur-md shadow-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span>{personal.status}</span>
-          </div>
+    <section className="pt-8 pb-16 sm:pb-24 border-b border-[#E7E2D6]">
+      {/* Editorial Headline */}
+      <div className="space-y-6 max-w-3xl">
+        <div className="font-mono text-xs uppercase tracking-widest text-[#78716C]">
+          [ Portfolio &amp; Index ]
+        </div>
 
-          {/* Heading */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
-            Hi, I&apos;m{" "}
-            <span className="gradient-accent">{personal.name}</span>
-          </h1>
+        <h1 className="font-serif text-3xl sm:text-5xl md:text-[3.25rem] font-normal leading-[1.18] tracking-[-0.02em] text-[#1C1917]">
+          Full-Stack Developer building{" "}
+          <em className="italic font-serif font-light text-[#44403C]">AI automation</em>,{" "}
+          high-availability growth systems, and{" "}
+          <em className="italic font-serif font-light text-[#44403C]">data pipelines</em>.
+        </h1>
 
-          {/* Subtitle / Role */}
-          <p className="text-xl sm:text-2xl font-medium text-slate-300 mb-4">
-            {personal.role}
+        <p className="text-base sm:text-lg text-[#57534E] leading-relaxed max-w-2xl font-sans pt-2">
+          {personal.summary}
+        </p>
+      </div>
+
+      {/* Quick metadata strip */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 sm:pt-14 mt-10 border-t border-[#E7E2D6]/80 text-sm">
+        <div>
+          <span className="font-mono text-xs uppercase tracking-wider text-[#A8A29E] block mb-1">
+            Current
+          </span>
+          <p className="font-medium text-[#1C1917]">
+            Product &amp; BI Engineer
           </p>
-
-          {/* Summary / Mission */}
-          <p className="text-base sm:text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl">
-            {personal.summary}
+          <p className="text-xs text-[#78716C] mt-0.5">
+            YOBOLabs.ai
           </p>
+        </div>
 
-          {/* Call to Actions */}
-          <div className="flex flex-wrap items-center justify-center gap-3.5 mb-12">
+        <div>
+          <span className="font-mono text-xs uppercase tracking-wider text-[#A8A29E] block mb-1">
+            Education
+          </span>
+          <p className="font-medium text-[#1C1917]">
+            {education.institution}
+          </p>
+          <p className="text-xs text-[#78716C] mt-0.5">
+            Honors B.Sc. in Computer Science
+          </p>
+        </div>
+
+        <div>
+          <span className="font-mono text-xs uppercase tracking-wider text-[#A8A29E] block mb-1">
+            Connect
+          </span>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono">
             <a
-              href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition-all shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/40 hover:-translate-y-0.5"
+              href={`mailto:${personal.email}`}
+              className="text-[#1C1917] hover:opacity-60 transition editorial-link"
             >
-              <span>View Projects</span>
-              <ArrowRight className="w-4 h-4" />
+              Email
             </a>
-
             <a
               href={personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 hover:border-slate-700 font-medium text-sm transition-all hover:-translate-y-0.5"
+              className="text-[#1C1917] hover:opacity-60 transition inline-flex items-center gap-0.5 editorial-link"
             >
-              <Linkedin className="w-4 h-4 text-[#0a66c2]" />
               <span>LinkedIn</span>
+              <ArrowUpRight className="w-3 h-3 opacity-60" />
             </a>
-
-            <a
-              href={`mailto:${personal.email}`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 hover:border-slate-700 font-medium text-sm transition-all hover:-translate-y-0.5"
-            >
-              <Mail className="w-4 h-4 text-slate-400" />
-              <span>Email</span>
-            </a>
-
             <a
               href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 hover:border-slate-700 text-sm transition-all hover:-translate-y-0.5"
-              title="GitHub Profile"
-              aria-label="GitHub Profile"
+              className="text-[#1C1917] hover:opacity-60 transition inline-flex items-center gap-0.5 editorial-link"
             >
-              <Github className="w-4 h-4" />
+              <span>GitHub</span>
+              <ArrowUpRight className="w-3 h-3 opacity-60" />
             </a>
           </div>
-
-          {/* Highlights / Stats strip */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full max-w-4xl pt-6 border-t border-slate-800/80">
-            {stats.map((stat, idx) => (
-              <div
-                key={idx}
-                className="glass-card rounded-xl p-3.5 text-center flex flex-col items-center justify-center"
-              >
-                <span className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">
-                  {stat.label}
-                </span>
-                <span className="text-sm sm:text-base font-bold text-slate-200">
-                  {stat.value}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          {/* Scroll down indicator */}
-          <a
-            href="#about"
-            className="mt-14 text-slate-500 hover:text-slate-300 transition animate-bounce p-2"
-            aria-label="Scroll to about section"
-          >
-            <ChevronDown className="w-5 h-5" />
-          </a>
         </div>
       </div>
     </section>

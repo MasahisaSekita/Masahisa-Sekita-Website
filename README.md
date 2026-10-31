@@ -1,83 +1,60 @@
-# Masahisa Sekita — Personal Portfolio Website
+# Masahisa Sekita — Portfolio
 
-A sleek, responsive, and data-driven portfolio website designed to showcase professional experience in **Product & Business Intelligence Engineering**, full-stack software development, and AI systems. Built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**, optimized for instant zero-configuration deployment to **Vercel**.
+An editorial, typography-forward portfolio website designed in the style of [Arlen McCluskey](https://www.arlenmccluskey.com/). Built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**, optimized for deployment to **Vercel**.
 
----
-
-## ✨ Features
-
-- **⚡ Modern Tech Stack:** Next.js 14 (App Router) + TypeScript + Tailwind CSS + Lucide React.
-- **🎯 Tailored Content:** Highlights experience at **YOBOLabs.ai**, academic foundation at the **University of Toronto (UTSC)**, and featured projects like **Course Matrix**.
-- **🧩 Single Source of Truth:** All projects, experiences, skills, and links live in `data/portfolio.ts`—edit this one file to update your site!
-- **📱 Fully Responsive:** Clean layout across mobile phones, tablets, and desktop displays.
-- **🚀 Vercel Ready:** Pre-configured for automatic build and deployment upon git push.
-- **🔍 SEO & OpenGraph Ready:** Includes complete meta tags, keywords, social card preview settings, and favicon support.
+Showcases professional work as a **Full-Stack Developer** specializing in **AI Automation, Data Pipelines, and Internal Tooling**.
 
 ---
 
-## 🛠️ Project Structure
+## 🎨 Design System & Aesthetic
 
-```
-Masahisa-Sekita-Website/
-├── app/
-│   ├── globals.css         # Tailwind directives and custom utility styles
-│   ├── layout.tsx          # Root layout with SEO and OpenGraph metadata
-│   └── page.tsx            # Main page assembling all portfolio sections
-├── components/
-│   ├── Navbar.tsx          # Sticky glassmorphism header & navigation
-│   ├── Hero.tsx            # Hero introduction, status badge, and CTAs
-│   ├── About.tsx           # Narrative, focus areas, and education
-│   ├── ExperienceSection.tsx # Timeline showcasing YOBOLabs experience
-│   ├── ProjectsSection.tsx # Interactive filterable project showcase
-│   ├── SkillsSection.tsx   # Categorized skills matrix
-│   ├── ContactSection.tsx  # Direct email copy, LinkedIn & GitHub links
-│   └── Footer.tsx          # Footer and quick navigation
-├── data/
-│   └── portfolio.ts        # Editable personal data, experiences, and projects
-├── tailwind.config.ts      # Tailwind CSS styling configuration
-├── tsconfig.json           # TypeScript configuration
-└── package.json            # Scripts & dependencies
-```
+Inspired by high-craft editorial design studios:
+- **Palette:** Warm ivory paper canvas (`#FAF8F5`) with deep warm charcoal typography (`#1C1917` / `#44403C`) and delicate hairline dividers (`#E7E2D6`).
+- **Typography:** Refined editorial serif headings (*Newsreader*, *Georgia*, *Cormorant Garamond*) paired with technical monospace labels (*JetBrains Mono*, *Pitch Sans*) and clean sans-serif body (*Inter*).
+- **Index Architecture:** Numbered editorial case studies and experience breakdown with structured impact metrics.
+
+---
+
+## 📄 Structure & Content
+
+All content is synchronized with Masahisa Sekita's official resume and managed in a single editable file: [`data/portfolio.ts`](./data/portfolio.ts):
+
+- **Introduction / Index:** Core summary, current role at YOBOLabs.ai, U of T Computer Science degree, and direct contact channels.
+- **01 — Selected Systems & Projects:**
+  - AI Academic Planner (Course Matrix) — Autonomous RAG timetable agent
+  - Apache Superset Dependency Modernization — 50+ files refactored, PR #35920
+  - Automated Fraud Detection & Video QA Engine — BigQuery, Claude & Gemini API
+  - Thrill Bicycles Customer & Dealer Platform — Next.js production platform
+  - Cloud Infrastructure & Load Testing Suite — GCP, Docker, JUnit, JMeter
+- **02 — Experience & Contributions:**
+  - YOBOLabs.ai (Product & Business Intelligence Junior Engineer, Sep 2026 – Present)
+  - PT. Lajukarsa Global Industri (Full Stack Web Developer Intern, Jun 2026 – Sep 2026)
+  - Apache Superset (Open Source Software Developer, Sep 2025 – Dec 2025)
+  - YOBO (Software Development Intern, May 2024 – Sep 2024)
+- **03 — Technical Competencies:** Categorized breakdown of AI & Automation, Languages, Frameworks, Databases & Security, Cloud & DevOps, and Engineering Practices.
+- **04 — Inquiries & Colophon:** Direct contact information (email, phone, location, LinkedIn, GitHub).
 
 ---
 
 ## 💻 Local Development
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+```powershell
+# Run the local development server
+pnpm run dev
+# or: npm run dev
+```
 
-2. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-3. **Build for production:**
-   ```bash
-   npm run build
-   ```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🚀 Deploying to Vercel (1-Click)
+## 🚀 Deployment to Vercel
 
-1. Push your repository to GitHub:
-   ```bash
+1. Commit and push your changes to GitHub:
+   ```powershell
    git add .
-   git commit -m "Build personal portfolio website"
+   git commit -m "Update portfolio design to match Arlen McCluskey editorial aesthetic"
    git push origin main
    ```
-
-2. Go to [vercel.com](https://vercel.com) and log in with your GitHub account.
-3. Click **"Add New Project"** and select **`Masahisa-Sekita-Website`**.
-4. Leave all build settings as default (Vercel automatically detects Next.js).
-5. Click **"Deploy"**!
-6. Your portfolio will be live at `https://masahisa-sekita.vercel.app` (or your custom domain) with free SSL and automatic redeployments on every git push.
-
----
-
-## 📝 Updating Your Content
-
-To update any text, roles, project links, or skills, simply edit [`data/portfolio.ts`](./data/portfolio.ts). Changes will instantly reflect on the website without needing to touch any UI component code.
+2. Go to [vercel.com](https://vercel.com) &rarr; **Add New Project** &rarr; select **`Masahisa-Sekita-Website`**.
+3. Click **Deploy**. Vercel will automatically build and publish your site with continuous deployment on every git push.
