@@ -1,3 +1,8 @@
+export interface ExternalLink {
+  label: string;
+  url: string;
+}
+
 export interface Experience {
   company: string;
   role: string;
@@ -7,6 +12,7 @@ export interface Experience {
   achievements: string[];
   technologies: string[];
   link?: string;
+  links?: ExternalLink[];
 }
 
 export interface Project {
@@ -21,6 +27,7 @@ export interface Project {
   tags: string[];
   githubUrl?: string;
   liveUrl?: string;
+  links?: ExternalLink[];
   highlights: string[];
 }
 
@@ -75,11 +82,14 @@ export const portfolioData = {
       role: "Full Stack Web Developer Intern",
       type: "Internship",
       period: "Jun 2026 – Sep 2026",
-      link: "https://thrillwheels.com/",
+      links: [
+        { label: "PT. LGI Site", url: "https://pt-lgi-website.vercel.app/" },
+        { label: "Thrill Bicycles", url: "https://thrillwheels.com/" },
+      ],
       achievements: [
         "Built AI-assisted business analytics that automatically summarized operational performance and generated executive insights from live company data.",
         "Architected Python ETL pipelines integrating ERP data through REST APIs and Apache Airflow to power executive dashboards, replacing manual collection of metrics from sales, production, inventory, and AR/AP and saving an estimated 2-3 hours per day of reporting effort.",
-        "Developed and deployed a production full-stack web application for the company's Thrill Bicycles brand using React, Next.js, and TypeScript, delivering a responsive customer-facing platform for product catalogs, dealer information, and company news.",
+        "Developed and deployed production full-stack web applications for PT. Lajukarsa Global Industri's corporate portal and its Thrill Bicycles brand using React, Next.js, and TypeScript, delivering responsive customer-facing platforms for enterprise capabilities, product catalogs, dealer information, and company news.",
         "Integrated REST APIs across multiple business applications to consolidate fragmented systems into a single unified database, establishing a centralized source of truth for enterprise reporting."
       ],
       technologies: [
@@ -194,17 +204,20 @@ export const portfolioData = {
     {
       id: "thrill-bicycles-platform",
       index: "04",
-      title: "Thrill Bicycles Customer & Dealer Platform",
-      subtitle: "High-Availability Full-Stack Production Application",
+      title: "PT. Lajukarsa Global Industri & Thrill Bicycles Platforms",
+      subtitle: "High-Availability Full-Stack Corporate & Brand Web Applications",
       category: "Full-Stack Web",
       period: "2026",
       description:
-        "Customer-facing web application delivering interactive product catalogs, authorized dealer locators, and real-time company announcements for Thrill Bicycles brand.",
-      impact: "Consolidated fragmented multi-ERP databases into a single centralized source of truth",
+        "Production customer-facing web applications built for PT. Lajukarsa Global Industri — spanning the corporate manufacturing portal and the Thrill Bicycles consumer platform delivering interactive product catalogs, authorized dealer locators, and real-time company announcements.",
+      impact: "Launched dual production web platforms & consolidated fragmented multi-ERP databases into a single source of truth",
       tags: ["Next.js", "React", "TypeScript", "Python ETL", "Apache Airflow", "REST APIs"],
-      liveUrl: "https://thrillwheels.com/",
+      links: [
+        { label: "PT. LGI Site", url: "https://pt-lgi-website.vercel.app/" },
+        { label: "Thrill Bicycles", url: "https://thrillwheels.com/" },
+      ],
       highlights: [
-        "Built responsive, mobile-first product exploration experiences with server-side rendering.",
+        "Architected and deployed both the PT. Lajukarsa Global Industri corporate website and the Thrill Bicycles product & dealer platform.",
         "Designed Airflow ETL pipelines consolidating multi-department metrics (sales, inventory, AR/AP).",
         "Saved 2-3 hours daily of executive manual reporting overhead."
       ],

@@ -127,7 +127,7 @@ export default function ProjectsSection() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-4 text-xs font-mono">
+                <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}
@@ -151,6 +151,20 @@ export default function ProjectsSection() {
                       <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
                     </a>
                   )}
+
+                  {project.links &&
+                    project.links.map((link, lIdx) => (
+                      <a
+                        key={lIdx}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="uppercase tracking-wider text-[#1C1917] font-semibold hover:opacity-60 transition inline-flex items-center gap-1 editorial-link"
+                      >
+                        <span>{link.label}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+                      </a>
+                    ))}
                 </div>
               </div>
             </article>

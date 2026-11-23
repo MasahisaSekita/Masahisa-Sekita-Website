@@ -31,7 +31,7 @@ export default function ExperienceSection() {
             {/* Header: Role, Company & Period */}
             <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-4 pb-3 border-b border-[#E7E2D6]">
               <div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2.5">
                   <h3 className="font-serif text-xl sm:text-2xl font-normal text-[#1C1917]">
                     {exp.company}
                   </h3>
@@ -45,6 +45,22 @@ export default function ExperienceSection() {
                     >
                       <ArrowUpRight className="w-4 h-4" />
                     </a>
+                  )}
+                  {exp.links && (
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      {exp.links.map((item, lIdx) => (
+                        <a
+                          key={lIdx}
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-mono text-[11px] px-2 py-0.5 rounded bg-[#EFE9DC]/80 hover:bg-[#E7E0D0] text-[#44403C] hover:text-[#1C1917] border border-[#DDD5C5] transition inline-flex items-center gap-1"
+                        >
+                          <span>{item.label}</span>
+                          <ArrowUpRight className="w-3 h-3 opacity-70" />
+                        </a>
+                      ))}
+                    </div>
                   )}
                 </div>
                 <p className="font-serif italic text-base text-[#57534E] mt-0.5">

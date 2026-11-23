@@ -2,18 +2,32 @@ export default function ThrillWheelsPreview() {
   return (
     <div className="w-full bg-[#1C1917] rounded-xl overflow-hidden border border-[#3E3835] shadow-lg text-stone-200 text-xs font-mono select-none">
       {/* Top browser bar */}
-      <div className="bg-[#262220] px-4 py-2.5 flex items-center justify-between border-b border-[#3E3835]">
-        <div className="flex items-center gap-1.5">
+      <div className="bg-[#262220] px-4 py-2.5 flex flex-wrap items-center justify-between gap-2 border-b border-[#3E3835]">
+        <div className="flex flex-wrap items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-full bg-[#E06C75]/80 inline-block" />
           <span className="w-2.5 h-2.5 rounded-full bg-[#E5C07B]/80 inline-block" />
           <span className="w-2.5 h-2.5 rounded-full bg-[#98C379]/80 inline-block" />
-          <div className="ml-3 px-3 py-0.5 rounded bg-[#181615] text-[#A8A29E] text-[11px] border border-[#332D2A] flex items-center gap-1.5">
+          <a
+            href="https://pt-lgi-website.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-2 px-2.5 py-0.5 rounded bg-[#181615] hover:bg-[#2E2A27] text-[#D6D3D1] text-[11px] border border-[#332D2A] transition flex items-center gap-1.5"
+          >
             <span className="text-[#98C379]">🔒</span>
-            <span>https://thrillwheels.com</span>
-          </div>
+            <span>pt-lgi-website.vercel.app</span>
+          </a>
+          <a
+            href="https://thrillwheels.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-2.5 py-0.5 rounded bg-[#181615] hover:bg-[#2E2A27] text-[#A8A29E] hover:text-[#D6D3D1] text-[11px] border border-[#332D2A] transition flex items-center gap-1.5"
+          >
+            <span className="text-[#98C379]">🔒</span>
+            <span>thrillwheels.com</span>
+          </a>
         </div>
         <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-[#61AFEF]/10 text-[#61AFEF] border border-[#61AFEF]/20">
-          Production Web App
+          2 Production Web Apps
         </span>
       </div>
 
@@ -21,8 +35,8 @@ export default function ThrillWheelsPreview() {
       <div className="p-4 sm:p-5 bg-[#141211] space-y-3 font-sans">
         <div className="flex items-center justify-between border-b border-[#2B2724] pb-2 text-xs">
           <div className="flex items-center gap-3">
-            <span className="font-serif font-bold text-white tracking-wider">THRILL BICYCLES</span>
-            <span className="text-[#78716C] text-[11px] hidden sm:inline">| Built by PT. Lajukarsa Global Industri</span>
+            <span className="font-serif font-bold text-white tracking-wider">PT. LAJUKARSA GLOBAL INDUSTRI</span>
+            <span className="text-[#78716C] text-[11px] hidden sm:inline">| Corporate Portal &amp; Thrill Bicycles</span>
           </div>
           <div className="flex items-center gap-2 text-[10px] font-mono text-[#98C379]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#98C379] animate-pulse" />
